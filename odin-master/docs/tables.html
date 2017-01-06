@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <!-- metadata -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- page title -->
+  <title>Odin: A CSS Framework</title>
+
+  <!-- favicons -->
+  <link rel="icon" href="img/valknut.png">
+
+  <!-- styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/odin-0.7.0.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+
+<div class="container-xl">
+
+  <h1>Odin: A CSS Framework</h1>
+
+  <ol>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="start.html">Get started</a></li>
+    <li><a href="grid.html">The grid</a></li>
+    <li><a href="containers.html">Containers</a></li>
+    <li><a href="positioning.html">Positioning helper classes</a></li>
+    <li><a href="responsive.html">Responsive helper classes</a></li>
+    <li><a href="text.html">Text</a></li>
+    <li><a href="images.html">Images</a></li>
+    <li><a href="tables.html">Tables</a></li>
+    <li><a href="forms.html">Forms</a></li>
+  </ol>
+
+  <h2>Tables</h2>
+
+  <h3>Default table</h3>
+
+  <p>Tables receive no default styling in Odin, so any custom CSS you write will not conflict with default styling.</p>
+
+  <h3>Basic table</h3>
+
+  <p>If you do want some basic styling added without writing custom CSS, a class <code class="highlight">table-basic</code> is provided to give some styling to tables. Here's an example.</p>
+
+  <table class="table-basic">
+    <caption>Table title</caption>
+
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+        <th>Header 4</th>
+        <th>Header 5</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Row 1, Col 1</td>
+        <td>Row 1, Col 2</td>
+        <td>Row 1, Col 3</td>
+        <td>Row 1, Col 4</td>
+        <td>Row 1, Col 5</td>
+      </tr>
+      <tr>
+        <td>Row 2, Col 1</td>
+        <td>Row 2, Col 2</td>
+        <td>Row 2, Col 3</td>
+        <td>Row 2, Col 4</td>
+        <td>Row 2, Col 5</td>
+      </tr>
+      <tr>
+        <td>Row 3, Col 1</td>
+        <td>Row 3, Col 2</td>
+        <td>Row 3, Col 3</td>
+        <td>Row 3, Col 4</td>
+        <td>Row 3, Col 5</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="5">Here is some additional information</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <pre>
+    <code>
+      &lt;table class="<span class="highlight">table-basic</span>"&gt;
+        &lt;caption&gt;Table title&lt;/caption&gt;
+
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Header 1&lt;/th&gt;
+            &lt;th&gt;Header 2&lt;/th&gt;
+            &lt;th&gt;Header 3&lt;/th&gt;
+            &lt;th&gt;Header 4&lt;/th&gt;
+            &lt;th&gt;Header 5&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Row 1, Col 1&lt;/td&gt;
+            &lt;td&gt;Row 1, Col 2&lt;/td&gt;
+            &lt;td&gt;Row 1, Col 3&lt;/td&gt;
+            &lt;td&gt;Row 1, Col 4&lt;/td&gt;
+            &lt;td&gt;Row 1, Col 5&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Row 2, Col 1&lt;/td&gt;
+            &lt;td&gt;Row 2, Col 2&lt;/td&gt;
+            &lt;td&gt;Row 2, Col 3&lt;/td&gt;
+            &lt;td&gt;Row 2, Col 4&lt;/td&gt;
+            &lt;&gt;Row 2, Col 5&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Row 3, Col 1&lt;/td&gt;
+            &lt;td&gt;Row 3, Col 2&lt;/td&gt;
+            &lt;td&gt;Row 3, Col 3&lt;/td&gt;
+            &lt;td&gt;Row 3, Col 4&lt;/td&gt;
+            &lt;td&gt;Row 3, Col 5&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+
+        &lt;tfoot&gt;
+          &lt;tr&gt;
+            &lt;td colspan="5"&gt;Here is some additional information&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tfoot&gt;
+      &lt;/table&gt;
+    </code>
+  </pre>
+
+  <h3>Responsive Tables</h3>
+
+  <p>Using the class <code class="highlight">table-stack</code> will reflow the table so that each row is displayed using stacked columns. This will usually eliminate the need for sideways scrolling on small devices. The <code>aria-label</code> attribute is used to replace the function of the now hidden table head. </p>
+
+  <p>The following additional classes are provided so that tables stack on specified viewport and below: <code class="highlight">table-stack-xs</code>, <code class="highlight">table-stack-sm</code>, and <code class="highlight">table-stack-md</code>. There is no <code>table-stack-lg</code> because <code>table-stack</code> serves the same purpose.</p>
+
+  <p>Here's an example of a table that will stack on small and extra-small viewports. Resize the browser window to see the effect.</p>
+
+  <table class="table-basic table-stack-sm">
+    <caption>Table title</caption>
+
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+        <th>Header 4</th>
+        <th>Header 5</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td aria-label="Header 1">Row 1, Col 1</td>
+        <td aria-label="Header 2">Row 1, Col 2</td>
+        <td aria-label="Header 3">Row 1, Col 3</td>
+        <td aria-label="Header 4">Row 1, Col 4</td>
+        <td aria-label="Header 5">Row 1, Col 5</td>
+      </tr>
+      <tr>
+        <td aria-label="Header 1">Row 2, Col 1</td>
+        <td aria-label="Header 2">Row 2, Col 2</td>
+        <td aria-label="Header 3">Row 2, Col 3</td>
+        <td aria-label="Header 4">Row 2, Col 4</td>
+        <td aria-label="Header 5">Row 2, Col 5</td>
+      </tr>
+      <tr>
+        <td aria-label="Header 1">Row 3, Col 1</td>
+        <td aria-label="Header 2">Row 3, Col 2</td>
+        <td aria-label="Header 3">Row 3, Col 3</td>
+        <td aria-label="Header 4">Row 3, Col 4</td>
+        <td aria-label="Header 5">Row 3, Col 5</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="5">Here is some additional information</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <pre>
+    <code>
+      &lt;table class="table-basic <span class="highlight">table-stack-sm</span>"&gt;
+        &lt;caption&gt;Table title&lt;/caption&gt;
+
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Header 1&lt;/th&gt;
+            &lt;th&gt;Header 2&lt;/th&gt;
+            &lt;th&gt;Header 3&lt;/th&gt;
+            &lt;th&gt;Header 4&lt;/th&gt;
+            &lt;th&gt;Header 5&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td <code class="highlight">aria-label="Header 1"</code>&gt;Row 1, Col 1&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 2"</code>&gt;Row 1, Col 2&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 3"</code>&gt;Row 1, Col 3&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 4"</code>&gt;Row 1, Col 4&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 5"</code>&gt;Row 1, Col 5&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td <code class="highlight">aria-label="Header 1"</code>&gt;Row 2, Col 1&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 2"</code>&gt;Row 2, Col 2&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 3"</code>&gt;Row 2, Col 3&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 4"</code>&gt;Row 2, Col 4&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 5"</code>&gt;Row 2, Col 5&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td <code class="highlight">aria-label="Header 1"</code>&gt;Row 3, Col 1&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 2"</code>&gt;Row 3, Col 2&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 3"</code>&gt;Row 3, Col 3&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 4"</code>&gt;Row 3, Col 4&lt;/td&gt;
+            &lt;td <code class="highlight">aria-label="Header 5"</code>&gt;Row 3, Col 5&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+
+        &lt;tfoot&gt;
+          &lt;tr&gt;
+            &lt;td colspan="5"&gt;Here is some additional information&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tfoot&gt;
+      &lt;/table&gt;
+    </code>
+  </pre>
+
+  <h3>Row shading</h3>
+
+  <p>The following classes are provided to automatically shade alternating rows of a table: <code class="highlight">shade-even-rows</code> and <code class="highlight">shade-even-rows</code>. Here's an example of a table with odd rows shaded. Be sure to enclose rows to be shaded in <code>tbody</code>. Otherwise, rows in <code>thead</code> and/or <code>tfoot</code> may be unwantedly shaded.</p>
+
+  <table class="table-basic table-stack-sm shade-odd-rows">
+    <caption>Table title</caption>
+
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+        <th>Header 4</th>
+        <th>Header 5</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td aria-label="Header 1">Row 1, Col 1</td>
+        <td aria-label="Header 2">Row 1, Col 2</td>
+        <td aria-label="Header 3">Row 1, Col 3</td>
+        <td aria-label="Header 4">Row 1, Col 4</td>
+        <td aria-label="Header 5">Row 1, Col 5</td>
+      </tr>
+      <tr>
+        <td aria-label="Header 1">Row 2, Col 1</td>
+        <td aria-label="Header 2">Row 2, Col 2</td>
+        <td aria-label="Header 3">Row 2, Col 3</td>
+        <td aria-label="Header 4">Row 2, Col 4</td>
+        <td aria-label="Header 5">Row 2, Col 5</td>
+      </tr>
+      <tr>
+        <td aria-label="Header 1">Row 3, Col 1</td>
+        <td aria-label="Header 2">Row 3, Col 2</td>
+        <td aria-label="Header 3">Row 3, Col 3</td>
+        <td aria-label="Header 4">Row 3, Col 4</td>
+        <td aria-label="Header 5">Row 3, Col 5</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="5">Here is some additional information</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <pre>
+    <code>
+      &lt;table class="table-basic table-stack-sm <span class="highlight">shade-odd-rows</span>"&gt;
+        &lt;caption&gt;Table title&lt;/caption&gt;
+
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Header 1&lt;/th&gt;
+            &lt;th&gt;Header 2&lt;/th&gt;
+            &lt;th&gt;Header 3&lt;/th&gt;
+            &lt;th&gt;Header 4&lt;/th&gt;
+            &lt;th&gt;Header 5&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td aria-label="Header 1"&gt;Row 1, Col 1&lt;/td&gt;
+            &lt;td aria-label="Header 2"&gt;Row 1, Col 2&lt;/td&gt;
+            &lt;td aria-label="Header 3"&gt;Row 1, Col 3&lt;/td&gt;
+            &lt;td aria-label="Header 4"&gt;Row 1, Col 4&lt;/td&gt;
+            &lt;td aria-label="Header 5"&gt;Row 1, Col 5&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td aria-label="Header 1"&gt;Row 2, Col 1&lt;/td&gt;
+            &lt;td aria-label="Header 2"&gt;Row 2, Col 2&lt;/td&gt;
+            &lt;td aria-label="Header 3"&gt;Row 2, Col 3&lt;/td&gt;
+            &lt;td aria-label="Header 4"&gt;Row 2, Col 4&lt;/td&gt;
+            &lt;td aria-label="Header 5"&gt;Row 2, Col 5&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td aria-label="Header 1"&gt;Row 3, Col 1&lt;/td&gt;
+            &lt;td aria-label="Header 2"&gt;Row 3, Col 2&lt;/td&gt;
+            &lt;td aria-label="Header 3"&gt;Row 3, Col 3&lt;/td&gt;
+            &lt;td aria-label="Header 4"&gt;Row 3, Col 4&lt;/td&gt;
+            &lt;td aria-label="Header 5"&gt;Row 3, Col 5&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+
+        &lt;tfoot&gt;
+          &lt;tr&gt;
+            &lt;td colspan="5"&gt;Here is some additional information&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tfoot&gt;
+      &lt;/table&gt;
+    </code>
+  </pre>
+
+  &nbsp;
+</div>
+
+<!-- include any javascript below this line -->
+
+</body>
+</html>
